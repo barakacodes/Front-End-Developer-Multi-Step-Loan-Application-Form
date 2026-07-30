@@ -47,3 +47,11 @@ A production-grade, 8-step multi-step loan application form designed for a simul
 1.  Clone the repository:
     ```bash
     git clone https://github.com/barakacodes/Front-End-Developer-Multi-Step-Loan-Application-Form.git
+
+Install dependencies:
+```bash
+npm install
+
+Run the development server:
+```bash
+npm run dev
