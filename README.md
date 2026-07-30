@@ -23,6 +23,24 @@ A production-grade, 8-step multi-step loan application form designed for a simul
 *   **Encrypted Auto-Save:** AES-256-GCM encryption using the Web Crypto API for LocalStorage persistence every 30 seconds with a 72-hour TTL and "Resume/Start Fresh" recovery modal.
 *   **Pre-Approval Summary:** Automated EMI calculation (Reducing Balance Method) with Indian number formatting (₹10,50,000) and four RBI-compliant consent checkboxes.
 
+## 🧪 Testing the Application (Simulated KYC)
+
+Since this is a client-side simulation, the following dummy credentials are mathematically valid and will successfully trigger the **✅ Verified** badge in Step 3 (KYC).
+
+| Field | Enter this value | Reason it works |
+| :--- | :--- | :--- |
+| **PAN Number** | `AAAPP1234F` | The 4th character is **'P'**, indicating an Individual entity type (required for Personal/Home loans). |
+| **Aadhaar Number** | `987654321012` | This specific 12-digit string passes the mathematical **Verhoeff checksum** algorithm. |
+| **Co-Applicant PAN** | `AAAPP1234F` | Same as primary PAN; passes the entity-type check. |
+
+**Test Flow:**
+1. Enter `AAAPP1234F` for PAN → Wait 1.5 seconds → **✅ Verified** appears.
+2. Enter `987654321012` for Aadhaar → Wait 1.5 seconds → **✅ Verified** appears.
+3. Check the "Consent" box.
+4. Click "Next" to proceed to the Address step.
+
+
+
 ## 🛠️ Technology Stack
 
 *   **Frontend Framework:** React 18 (Vite)
